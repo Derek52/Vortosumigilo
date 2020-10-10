@@ -1,0 +1,11 @@
+Number Of Unique Words: 10
+garçon=1
+séveillèrent=1
+gewöhnlichen=1
+ça=1
+büro=1
+naurait=1
+impliqués=1
+verdrängt=1
+straßenecke=1
+überlebt=1

@@ -5,7 +5,8 @@ data class Item(val word : String, val count : Int)
 
 fun main() {
 
-	val frequencyMap: MutableMap<String, Int> = createFrequencyMap(File("German.Words.txt"))//a file of german words with special characters to test my regex expression
+	//this file tests a set of words that use special accented characters from languages like Catalan, French, and German
+	val frequencyMap: MutableMap<String, Int> = createFrequencyMap(File("Accented.Letters.txt"))
 
 
 	val items = ArrayList<Item>()
@@ -24,7 +25,7 @@ fun main() {
 
 fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 	val frequencyMap: MutableMap<String, Int> = HashMap()
-	val regex = "[^A-Za-z ]".toRegex()
+	val regex = "[^'a-zA-ZÀ-ÖØ-öø-ÿ]".toRegex()
 	inputFile.forEachLine { 
 		val words = it.split(" ")
 		for (word in words) {
@@ -38,8 +39,8 @@ fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 }
 
 fun writeToFile(list : List<Item>, individualWordCount: Int) {
-	val writer = FileWriter("Output.txt");
-	writer.write("Number Of Unique Words: $individualWordCount")
+	val writer = FileWriter("Accented.Letters.Test.Result.txt");
+	writer.write("Number Of Unique Words: $individualWordCount\n")
 	for (item in list) {
 		writer.write("${item.word}=${item.count}\n")
 	}
