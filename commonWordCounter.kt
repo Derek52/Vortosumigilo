@@ -3,24 +3,28 @@ import java.io.FileWriter
 
 data class Item(val word : String, val count : Int)
 
-fun main() {
+fun main(args : Array<String>) {
 
-	//this file tests a set of words that use special accented characters from languages like Catalan, French, and German
-	val frequencyMap: MutableMap<String, Int> = createFrequencyMap(File("Accented.Letters.txt"))
+	for (arg in args) {
+		val inputFile = File(arg)
+		val outputFileName = arg.substring(0, arg.length - 4)//remove file extension from input filename, e.g. "harry.potter.txt" to "harry.potter"
 
+		val frequencyMap: MutableMap<String, Int> = createFrequencyMap(inputFile)
+		
+		val items = ArrayList<Item>()
 
-	val items = ArrayList<Item>()
-
-	for (s in frequencyMap) {
-		items.add(Item(s.key, s.value))
+		for (s in frequencyMap) {
+			items.add(Item(s.key, s.value))
+		}
+	
+		val sortedList = items.sortedBy { it.count }.reversed()
+	
+		println(sortedList)
+		println(frequencyMap.size)
+	
+		writeToFile(sortedList, frequencyMap.size, outputFileName)
+	
 	}
-
-	val sortedList = items.sortedBy { it.count }.reversed()
-
-	println(sortedList)
-	println(frequencyMap.size)
-
-	writeToFile(sortedList, frequencyMap.size)
 }
 
 fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
@@ -38,8 +42,8 @@ fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 	return frequencyMap
 }
 
-fun writeToFile(list : List<Item>, individualWordCount: Int) {
-	val writer = FileWriter("Accented.Letters.Test.Result.txt");
+fun writeToFile(list : List<Item>, individualWordCount : Int, outputFileName : String) {
+	val writer = FileWriter("$outputFileName.counted.words.txt");
 	writer.write("Number Of Unique Words: $individualWordCount\n")
 	for (item in list) {
 		writer.write("${item.word}=${item.count}\n")

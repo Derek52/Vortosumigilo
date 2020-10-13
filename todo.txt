@@ -1,5 +1,4 @@
-Edit Regex expression to allow for accented characters to not be discarded
+Edit Regex expression to allow for accented characters to not be discarded - mostly done
 Move more logic to separate methods
-Make input file a commandline option instead of hardcoding it
 Give this script an actual name
 write automated tests
