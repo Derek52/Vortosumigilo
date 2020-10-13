@@ -33,6 +33,7 @@ fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 	inputFile.forEachLine { 
 		val words = it.split(" ")
 		for (word in words) {
+			if (word.length == 0) continue
 			val wordToCount = regex.replace(word.toLowerCase(), "")
 			var count = frequencyMap[wordToCount]
 			if (count == null) count = 0
