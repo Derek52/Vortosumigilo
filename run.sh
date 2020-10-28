@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar wordCounter.jar
+java -jar Vortosumigilo.jar

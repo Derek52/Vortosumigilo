@@ -1,4 +1,3 @@
 Edit Regex expression to allow for accented characters to not be discarded - mostly done
 Move more logic to separate methods
-Give this script an actual name
 write automated tests

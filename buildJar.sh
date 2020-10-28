@@ -1,3 +1,3 @@
 #!/bin/bash
 
-kotlinc commonWordCounter.kt -include-runtime -d wordCounter.jar
+kotlinc Vortosumigilo.kt -include-runtime -d Vortosumigilo.jar

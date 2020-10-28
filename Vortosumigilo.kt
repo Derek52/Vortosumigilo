@@ -9,8 +9,7 @@ fun main(args : Array<String>) {
 		val inputFile = File(arg)
 		val outputFileName = arg.substring(0, arg.length - 4)//remove file extension from input filename, e.g. "harry.potter.txt" to "harry.potter"
 
-		val frequencyMap: MutableMap<String, Int> = createFrequencyMap(inputFile)
-		
+		val frequencyMap: MutableMap<String, Int> = createFrequencyMap(inputFile)	
 		val items = ArrayList<Item>()
 
 		for (s in frequencyMap) {
