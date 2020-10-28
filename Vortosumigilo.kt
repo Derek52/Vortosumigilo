@@ -28,7 +28,7 @@ fun main(args : Array<String>) {
 
 fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 	val frequencyMap: MutableMap<String, Int> = HashMap()
-	val regex = "[^'a-zA-ZÀ-ÖØ-öø-ÿ]".toRegex()
+	val regex = "[^'a-zA-ZÀ-ÖØ-öø-ÿ‘-‛ĜĝĤĥĈĉĴĵŜŝŬŭ]".toRegex()
 	inputFile.forEachLine { 
 		val words = it.split(" ")
 		for (word in words) {

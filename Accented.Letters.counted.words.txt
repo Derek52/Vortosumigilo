@@ -1,10 +1,12 @@
-Number Of Unique Words: 10
+Number Of Unique Words: 12
 garçon=1
-séveillèrent=1
+s’éveillèrent=1
 gewöhnlichen=1
+aŭ=1
 ça=1
+ĝemo=1
+n'aurait=1
 büro=1
-naurait=1
 impliqués=1
 verdrängt=1
 straßenecke=1
