@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar Vortosumigilo.jar
+java -jar Vortosumigilo.jar "$@"
