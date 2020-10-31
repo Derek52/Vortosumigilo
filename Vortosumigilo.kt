@@ -3,6 +3,8 @@ import java.io.FileWriter
 
 data class Item(val word : String, val count : Int)
 
+val russianRegex = "[^'Ѐ-ӿ]".toRegex()
+
 fun main(args : Array<String>) {
 
 	for (arg in args) {
@@ -28,7 +30,8 @@ fun main(args : Array<String>) {
 
 fun createFrequencyMap(inputFile : File) : MutableMap<String, Int> {
 	val frequencyMap: MutableMap<String, Int> = HashMap()
-	val regex = "[^'a-zA-ZÀ-ÖØ-öø-ÿ‘-‛ĜĝĤĥĈĉĴĵŜŝŬŭ]".toRegex()
+	//val regex = "[^'a-zA-ZÀ-ÖØ-öø-ÿ‘-‛ĜĝĤĥĈĉĴĵŜŝŬŭ]".toRegex()
+	val regex = russianRegex
 	inputFile.forEachLine { 
 		val words = it.split(" ")
 		for (word in words) {
